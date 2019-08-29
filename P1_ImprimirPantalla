@@ -1,0 +1,23 @@
+//  Curso Arduino - Raziel Computer.
+//  Programa: 
+//  El objetivo de este programa es entender los conceptos básicos de la programación
+//    de Arduino. Especificamente ocuparemos la impresión de mensajes en pantalla.
+//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
+//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  https://www.facebook.com/razielcomputer/
+
+//El ciclo setup se ejecuta una sola vez.
+void setup() 
+{
+  Serial.begin(9600); //Iniciamos Comunicación Computadora-Tarjeta Arduino.
+                      // 9600 bits por Segundos (Batios).
+} 
+
+//El ciclo loop se ejecuta infinitamente.
+void loop() {
+  
+
+  Serial.println("hola\n què\n tal\ "); //La diagonal es para salto de línea
+  delay(3000);
+    
+}
