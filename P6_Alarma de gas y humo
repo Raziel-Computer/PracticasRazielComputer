@@ -1,0 +1,79 @@
+//  Curso Arduino - Raziel Computer.
+//  Programa: Alarma contra gas y humno
+//  El objetivo de este programa es entender los conceptos básicos de la programación, 
+// uso de condición if con sensores, se redujo la condición a 320, para la detección de humo,
+// se puede ajustar a su preferencia.
+
+//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
+//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  https://www.facebook.com/razielcomputer/
+
+int nivel=0; //declaramos la variable "nivel" para la lectura del sensor
+
+void setup() {
+
+  Serial.begin(9600);
+  pinMode(A5, INPUT);
+  pinMode(7,OUTPUT);
+  pinMode(11,OUTPUT);
+  pinMode(10,OUTPUT);
+  
+}
+
+void loop() {
+  
+nivel=analogRead(A5);
+Serial.print("Lo que leyó el sensor es:");
+Serial.println(nivel);
+
+if(nivel>=320){
+  Serial.println("Se detectan gases");
+  digitalWrite(7,HIGH);
+  digitalWrite(10,HIGH);
+  delay(100);
+   digitalWrite(7,LOW);
+  digitalWrite(10,LOW);
+  delay(100); 
+
+    digitalWrite(7,HIGH);
+  digitalWrite(10,HIGH);
+  delay(100);
+   digitalWrite(7,LOW);
+  digitalWrite(10,LOW);
+  delay(100);
+
+      digitalWrite(7,HIGH);
+  digitalWrite(10,HIGH);
+  delay(100);
+   digitalWrite(7,LOW);
+  digitalWrite(10,LOW);
+  delay(100);
+
+      digitalWrite(7,HIGH);
+  digitalWrite(10,HIGH);
+  delay(100);
+   digitalWrite(7,LOW);
+  digitalWrite(10,LOW);
+  delay(100);
+
+      digitalWrite(7,HIGH);
+  digitalWrite(10,HIGH);
+  delay(100);
+   digitalWrite(7,LOW);
+  digitalWrite(10,LOW);
+  delay(100);
+
+            tone(11, 440); // genera tono de 440hz 1000ms
+          delay(1000);
+          noTone(11); // detiene el tono 500ms
+          delay(500);
+          tone(11, 523, 300); // genera tono de 523hz y 300hz 1000ms
+          delay(1000);
+}
+  else {
+          Serial.println("Ambiente libre");
+delay(3000);
+          
+      }
+
+}
