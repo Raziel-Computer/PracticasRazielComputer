@@ -1,0 +1,42 @@
+//  Curso Arduino - Raziel Computer.
+//  Programa: Sensor ultrasónico
+//  El objetivo de este programa es entender los conceptos básicos de programación,
+//  usando condición y sensor ultrasónico.
+
+//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
+//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  https://www.facebook.com/razielcomputer/
+
+int TRIG = 10; // Este pin es el que emite el pulso ultrasónico
+int ECO = A5; // Este es pin que asignaremos para la lectura del pulso ultrasónico
+int LED = 3;
+int DURACION;
+int DISTANCIA;
+int buzzer;
+
+void setup(){
+  pinMode(TRIG, OUTPUT);
+  pinMode(ECO, INPUT);
+  pinMode(LED, OUTPUT);
+  pinMode(11, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop(){
+  digitalWrite(TRIG, HIGH);
+  delay(1);
+  digitalWrite(TRIG, LOW);
+  DURACION = pulseIn(ECO, HIGH);
+  DISTANCIA = DURACION / 58.2;        // eSTE VALOR es por el proveedor preestablecido
+  Serial.println(DISTANCIA);
+  delay(100);
+  if(DISTANCIA <= 20 && DISTANCIA >= 0){
+    digitalWrite(LED, HIGH);
+    tone(11, 440); // genera tono de 440hz 1000ms
+          delay(250);
+    delay(DISTANCIA * 10);
+    digitalWrite(LED, LOW);           // Si entramos con una distancia sera de 10 a 20 centi
+    noTone(11); // detiene el tono 500ms
+          delay(250);
+  }
+}
