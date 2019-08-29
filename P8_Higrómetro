@@ -1,0 +1,38 @@
+//  Curso de Robótica Aplicada
+//  Programa: Higrómetro
+//  Objetivo: Aprender las aplicaciones en donde podemos usar el sensor de agua y la elaboración
+//  del circuito.
+
+//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
+//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  https://www.facebook.com/razielcomputer/
+
+int valorLeido=0;
+
+void setup() {
+Serial.begin(9600);
+pinMode(A5, INPUT);  
+pinMode(11,OUTPUT);  
+}
+
+void loop() {
+  valorLeido=analogRead(A5);
+  Serial.println(valorLeido);
+  delay(100);
+
+  if(valorLeido<=600){
+    Serial.println("Hay agua");
+    delay(250);
+  }
+
+  else{
+    Serial.println("No hay agua");
+    delay(250);
+          tone(11, 440); // genera tono de 440hz 1000ms
+          delay(1000);
+          noTone(11); // detiene el tono 500ms
+          delay(500);
+          tone(11, 523, 300); // genera tono de 523hz y 300hz 1000ms
+          delay(1000);
+  }
+}
