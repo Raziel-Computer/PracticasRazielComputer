@@ -1,0 +1,26 @@
+//  Curso Arduino - Raziel Computer.
+//  Programa: Encender y apagar Leds
+//  El objetivo de este programa es entender los conceptos básicos de la programación
+//    de Arduino. Especificamente ocuparemos la impresión de mensajes en pantalla.
+//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
+//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  https://www.facebook.com/razielcomputer/
+
+void setup() {
+  Serial.begin(9600); //Iniciamos comunicación con Serial.
+  pinMode(11,OUTPUT);//Declaramos el tipo de pin (Salida) 
+  pinMode(9,OUTPUT);
+}
+
+void loop() {
+
+  digitalWrite(11,HIGH);  //  Mandamos una señal que encenderá el led que esté conectado
+                            //al pin 11 de Arduino.
+  digitalWrite(9,LOW);                          
+  delay(1000);  //Pausa de 1 Segundo.
+
+  digitalWrite(11,LOW); // Mandamos una señal que apagará el led que esté conectado
+  digitalWrite(9,HIGH);                         //al pin 11 de Arduino.
+  delay(1000);  //Pausa de 1 Segundo.
+  
+}
