@@ -2,9 +2,9 @@
 //  Programa: Alarma contra gas
 //  El objetivo de este programa es entender los conceptos básicos de la programación, 
 // uso de condición if con sensores.
-
-//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
-//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  Fecha 30/09/2018.
+//  Created by: Raziel Computer® All rights reserved.
+//  Asesorias - Correo: razielrobotica@gmail.com Whatsapp 55-8307-6745
 //  https://www.facebook.com/razielcomputer/
 
 int nivel=0; //Declaramos la variable "nivel" para la lectura del sensor MQ-2
