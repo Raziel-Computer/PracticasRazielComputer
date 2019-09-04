@@ -1,0 +1,55 @@
+//  Raziel Computer®
+//  Programa: -Sensor temperatura y humedad + Buzzer + Rele
+//  El objetivo de este programa es automatizar el clima, usando un RELE
+//  para conectar un ventilador al subir la temperatura a mas de 20°centigrados.
+//  Fecha 30/09/2018.
+//  Created by: Raziel Computer® All rigths reserved.
+//  Asesorias - Correo: razielrobotica@gmail.com Whatsapp 55-8307-6745
+
+#include <DHT.h>
+
+const int ventilador=3;
+const int sensorDHT=A5;
+int temp, humedad;
+DHT dht (A5,DHT11);
+int nivel=0;
+
+
+void setup() {
+ Serial.begin(9600); 
+ pinMode(ventilador,OUTPUT);
+ dht.begin(); 
+ pinMode(sensorDHT, INPUT); //Declaramos de qué tipo es el PIN (Entrada)
+ pinMode(3, OUTPUT);
+
+}
+
+void loop() {
+  humedad= dht.readHumidity();
+  temp= dht.readTemperature();
+  nivel=analogRead(sensorDHT);
+  Serial.print("Temperatura: ");
+  Serial.print(temp);
+  Serial.println("°C");
+  Serial.print(humedad);
+  Serial.print("%");
+  Serial.print(" ");
+  Serial.print(" ");
+  Serial.println(nivel); 
+
+  delay(1000);
+
+  if (nivel>=250){
+  while (temp>=20){
+    Serial.println("Ventiladores encendidos");
+    digitalWrite(ventilador,HIGH);
+    temp= dht.readTemperature();
+    digitalWrite(7,125);
+    delay(2000);
+  }
+
+  digitalWrite(11,HIGH);
+  digitalWrite(ventilador,LOW);
+
+}
+}
