@@ -1,8 +1,9 @@
 //  Curso Arduino - Raziel Computer.
 //  Programa: Contador numérico
 //  El objetivo de este programa es entender los conceptos básicos de programación en Arduino.
-//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
-//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  Fecha 30/09/2018.
+//  Created by: Raziel Computer® All rights reserved.
+//  Asesorias - Correo: razielrobotica@gmail.com Whatsapp 55-8307-6745
 //  https://www.facebook.com/razielcomputer/
 
 void setup() {
