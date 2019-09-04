@@ -1,9 +1,10 @@
 //  Curso Arduino - Raziel Computer.
 //  Programa: 
 //  El objetivo de este programa es entender los conceptos básicos de la programación
-//    de Arduino. Especificamente ocuparemos la impresión de mensajes en pantalla.
-//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
-//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  de Arduino. Especificamente ocuparemos la impresión de mensajes en pantalla.
+//  Fecha 30/09/2018.
+//  Created by: Raziel Computer® All rights reserved.
+//  Asesorias - Correo: razielrobotica@gmail.com Whatsapp 55-8307-6745
 //  https://www.facebook.com/razielcomputer/
 
 //El ciclo setup se ejecuta una sola vez.
