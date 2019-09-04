@@ -3,8 +3,8 @@
 //  El objetivo de este programa es entender los conceptos básicos de programación,
 //  usando condición y sensor ultrasónico.
 
-//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
-//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  Created by: Raziel Computer® All rigths reserved.
+//  Asesorias - Correo: razielrobotica@gmail.com Whatsapp 55-8307-6745
 //  https://www.facebook.com/razielcomputer/
 
 int TRIG = 10; // Este pin es el que emite el pulso ultrasónico
