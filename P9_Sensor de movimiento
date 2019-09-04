@@ -1,0 +1,35 @@
+//  Raziel Computer
+//  Programa: -Sensor de movimiento + Buzzer + Rele-
+//  El objetivo de este programa es crear un sensor de presencia con un buzzer de alarma y un rele que
+//  encienda algún foco cuando detecte a alguna persona o animal en el rango de detección del sensor.
+//
+//  Fecha 30/09/2018.
+//  Created by: Raziel Computer® All rigths reserved.
+//  Turno Dominical 
+//  Asesorias - Correo: razielrobotica@gmail.com Whatsapp 55-8307-6745
+
+int PIR = A0;
+int RELE = 3;
+int BUZZER = 5;
+int ESTADO = 0;
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(PIR, INPUT);
+  pinMode(BUZZER, OUTPUT);
+  pinMode(RELE, OUTPUT);
+  delay(150);
+}
+
+void loop(){
+  ESTADO = digitalRead(PIR);
+  Serial.println(PIR);
+  if (ESTADO == HIGH){
+    Serial.println("Detectando movimiento por el sensor pir");
+    digitalWrite(RELE, HIGH);
+    digitalWrite(BUZZER, HIGH);
+    delay(100);
+    digitalWrite(RELE, LOW);
+    digitalWrite(BUZZER, LOW);
+  }
+}
