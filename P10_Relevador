@@ -1,0 +1,23 @@
+//  Raziel Computer
+//  Programa: Uso de relevador
+//  El objetivo de este programa es aprender a usar el relevador para
+//  circuitos de alto voltaje.
+//  Fecha 30/09/2018.
+//  Created by: Raziel Computer® All rigths reserved.
+//  Turno Dominical 
+//  Asesorias - Correo: razielrobotica@gmail.com Whatsapp 55-8307-6745
+
+void setup() {
+ 
+pinMode(10, OUTPUT);
+
+}
+
+void loop() {
+digitalWrite(10,HIGH);
+delay(5000);
+digitalWrite(10,LOW);
+delay(5000);
+
+
+}
