@@ -4,8 +4,8 @@
 // uso de condición if con sensores, se redujo la condición a 320, para la detección de humo,
 // se puede ajustar a su preferencia.
 
-//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
-//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  Created by: Raziel Computer® All rights reserved.
+//  Asesorias - Correo: razielrobotica@gmail.com Whatsapp 55-8307-6745
 //  https://www.facebook.com/razielcomputer/
 
 int nivel=0; //declaramos la variable "nivel" para la lectura del sensor
