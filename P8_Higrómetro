@@ -3,8 +3,8 @@
 //  Objetivo: Aprender las aplicaciones en donde podemos usar el sensor de agua y la elaboración
 //  del circuito.
 
-//  Created by: M. Ángel Morales R. Fecha 30/09/2018.
-//  Whatsapp 55-8307-6745, razielrobotica@gmail.com
+//  Created by: Raziel Computer® All rigths reserved.
+//  Asesorias - Correo: razielrobotica@gmail.com Whatsapp 55-8307-6745
 //  https://www.facebook.com/razielcomputer/
 
 int valorLeido=0;
