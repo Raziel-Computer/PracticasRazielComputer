@@ -1,0 +1,76 @@
+//  RAZIEL COMPUTER, Curso de robótica aplicada
+//  Programa: Radar ultrasónico con servo de 15° a 180°
+//  El objetivo de este programa es aplicar los conocimientos durante el curso, con este radar
+//  con sensor de distancia a 20 cm y un buzzer.
+//
+//  Fecha 30/09/2018.
+//  RAZIEL COMPUTER® Todos los derechos reservados.
+//  Asesorias Whatsapp 55-8307-6745
+//  razielrobotica@gmail.com
+
+#include<Servo.h>
+Servo miServo;
+int trig = 6;
+int echo = A5;
+int duracion=0, distancia=0;
+int buzzer = 8;
+
+void setup() {
+Serial.begin(9600);
+miServo.attach(3);
+pinMode(trig, OUTPUT);
+pinMode(echo, INPUT);
+pinMode(buzzer, OUTPUT);
+
+}
+
+void loop() {
+
+ for(int i=15;i<=165;i++){
+  miServo.write(i);
+  analogWrite(trig, HIGH);
+  delay(0.01);
+  analogWrite(trig, LOW);
+  delay(0.01);
+  analogWrite(trig, HIGH);
+  duracion= pulseIn(echo, HIGH);
+
+  distancia=(0.017 *duracion);
+  Serial.print("La distancia es = ");
+
+  Serial.print(distancia);
+  Serial.println("cm");
+  delay(0.01);
+
+  if(distancia >=0 && distancia < 25){
+    digitalWrite(buzzer, HIGH);
+    delay(distancia *  7);
+    digitalWrite(buzzer, LOW);
+    delay(distancia *  7);
+  }
+  delay(30);
+ }
+ for(int i=165;i>15;i--){
+  miServo.write(i);
+  analogWrite(trig, HIGH);
+  delay(0.01);
+  analogWrite(trig, LOW);
+  delay(0.01);
+  analogWrite(trig, HIGH);
+  duracion = pulseIn(echo, HIGH);
+
+  distancia=(0.017  * duracion);
+  Serial.print("La distancia es = ");
+  Serial.print(distancia);
+  Serial.println("cm");
+  delay(0.01);
+
+  if(distancia >=0 && distancia <25){
+    digitalWrite(buzzer, HIGH);
+    delay(distancia  *7);
+    digitalWrite(buzzer, LOW);
+    delay(distancia  *7);
+  }
+  delay(30);
+ }
+}
