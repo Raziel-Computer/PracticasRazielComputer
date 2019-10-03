@@ -18,7 +18,7 @@ void setup()
 void loop() {
   
 
-  Serial.println("hola\n què\n tal\ "); //La diagonal es para salto de línea
+  Serial.println("hola\n qué\n tal\n soy "); //La diagonal es para salto de línea
   delay(3000);
     
 }
